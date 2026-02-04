@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>AIRPLANE Booking Website</title>
+<script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script type="text/javascript" src="/static/js/language.js"></script>
+	 <link rel="stylesheet"href="/static/css/navstyle.css">
+<link rel="stylesheet"href="/static/css/air.css">
+	
+		
+
+</head>
+<header>
+<div class="logo">
+            <p>bangladesh travel</p>
+        </div>
+	<nav>
+		<ul>
+			<li><a href="{% url 'homey'%}">Home</a></li>
+			<li><a href="{% url 'bus'%}">BusTickets</a></li>
+			<li><a href="{% url 'train'%}">TrainTickets</a></li>
+			<li><a href="{% url 'airplane'%}">AirplaneTickets</a></li>
+				
+			</ul>
+              </nav>
+			  <button><a href="{% url 'plane_confirm'%}"> History </a> </button>
+
+
+	</nav>
+</header>
+
+<body >
+
+<div id="google_element" align="right"></div>
+<div class="bg-img">
+
+
+
+
+<br> <br> <br> <br> <br> <br> <br>  
+	<form method="POST">
+		{% csrf_token %}
+		<label for="from">From:</label>
+		<select id="from" name="from">
+                  <option value="--">--</option>
+			<option value="Chattogram">Chattogram</option>
+			<option value="Dhaka">Dhaka</option>
+			<option value="Sylhet">Sylhet</option>
+                  <option value="Cox's bazar">Cox's bazar</option>
+                  <option value="Barishal">Barishal</option>
+		</select>
+		<label for="to">To:</label>
+		<select id="to" name="to">
+                  <option value="--">--</option>
+			<option value="Chattogram">Chattogram</option>
+			<option value="Dhaka">Dhaka</option>
+			<option value="Sylhet">Sylhet</option>
+                 <option value="Cox's bazar">Cox's bazar</option>
+                 <option value="Barishal">Barishal</option>
+		</select>
+		<label for="date">Date:</label>
+		<input type="date" id="date" name="date" min="2023-01-01" max="2023-12-31">
+		<input type="submit" value="Search">
+	</form>
+</div>
+</body>
+</html>

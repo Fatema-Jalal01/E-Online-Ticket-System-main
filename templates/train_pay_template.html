@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Train Seat Confirmation</title>
+    <script>
+      window.onload = function() {
+        const fareElem = document.getElementById("total-fare");
+        const numSeatsElem = document.getElementById("num-seats");
+        const fare = parseInt(fareElem.textContent);
+        const numSeats = parseInt(numSeatsElem.textContent);
+        const totalFareElem = document.getElementById("total-fare-calc");
+        totalFareElem.textContent = fare * numSeats;
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigration bar</title>
+
+    <link rel="stylesheet"href="/static/css/home.css" >
+    <link rel="stylesheet"href="/static/css/navstyle.css" >
+    <link rel="stylesheet" href="/static/css/pdf.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js" ></script>
+
+  </head>
+  <body style="background-color:rgb(61, 163, 203);" style="width: 800px; ">
+    <marquee>Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp </marquee>
+    <header>
+        <div class="logo">
+            <p>bangladesh travel</p>
+        </div>
+		<nav>
+			<ul>
+				<li><a href="{% url 'homey'%}">Home</a></li>
+			    <li><a href="{% url 'bus'%}">BusTickets</a></li>
+			    <li><a href="{% url 'train'%}">TrainTickets</a></li>
+			    <li><a href="{% url 'airplane'%}">AirplaneTickets</a></li>
+				
+			</ul>
+              </nav>
+              <button><a href="{% url 'logout'%}" class="btn btn-primary"> Logout </a></button>
+
+              </header>	
+    <h2>Thank you {{user_name}} for using our service! Hoping you to see again! Wish you a safe journey. Following are your payment details:</h2>
+    
+    <div id = "whattoprint" style="width: 800px;">
+    
+    <br>
+    <br><br>
+    <h2>User Information:</h2>
+    <hr>
+    <h3> <p> Logged in as {{user_name}} </p> </h3>
+    <h3> <p> Email Address: {{email}} </p> </h3>
+    <br>
+    <br><br>
+    <h2>Train Information:</h2>
+    <hr>
+    <p><b>Train Name:</b> {{ train.t_name }}</p>
+    <p><b>Train From:</b> {{ train.tfrom }}</p>
+    <p><b>Train To:</b> {{ train.tto }}</p>
+    <p><b>Train Fare:</b> <span id="total-fare">{{ train.tfare }}</span></p>
+    <br>
+    <br><br>
+    <h2>Seat booking Information:</h2>
+    <hr>
+      {% if booked_seats %}
+      <h2>Booked Seats:</h2>
+      <ul>
+      {% for seat in booked_seats %}
+			{% if seat.user_id == user_id %}
+            <li>{{ seat.seat_number }}</li>
+			{% endif %}
+		  {% endfor %}
+    </ul>
+      <p>Number of seat booked: <span id="num-seats">{{ booked_seats|length }}</span></p>
+      
+		  
+	    {% else %}
+		  <p>No seats have been booked for this Train yet.</p>
+	     {% endif %}
+
+    <p>Total fare: <span id="total-fare-calc"></span></p>
+    <a href="javascript:generatepdf()" id = "downloadButton">Click to Download PDF</a>
+
+    <script>
+      async function generatepdf(){
+        document.getElementById("downloadButton").innerHTML = "Downloaded";
+        
+        //downloading
+        var downloading = document.getElementById("whattoprint")
+        var doc = new jsPDF('3', 'pt');
+  
+              await html2canvas(downloading, {
+                  //allowTaint: true,
+                  //useCORS: true,
+                  width: 530
+              }).then((canvas) => {
+                  //Canvas (convert to PNG)
+                  doc.addImage(canvas.toDataURL("image/png"), 'PNG', 50, 20, 500, 800);
+              })
+  
+              doc.save("Document.pdf");
+  
+              //End of downloading
+  
+       
+        //document.getElementById("downloadButton").innerHTML = "currently downloading, please wait";
+      }
+    </script>
+
+  </div>
+    </body>
+</html>
+
+

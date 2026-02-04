@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"href="/static/css/home.css" >
+    <link rel="stylesheet"href="/static/css/navstyle.css" 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ABOUT US</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/team.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<marquee>Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel</marquee>
+<header>
+<div class="logo">
+            <p>bangladesh travel</p>
+        </div>
+	<nav>
+		<ul>
+			<li><a href="{% url 'homey'%}">Home</a></li>
+			<li><a href="{% url 'bus'%}">BusTickets</a></li>
+			<li><a href="{% url 'train'%}">TrainTickets</a></li>
+			<li><a href="{% url 'airplane'%}">AirplaneTickets</a></li>
+				
+			</ul>
+              </nav>
+              <button><a href="{% url 'logout'%}" class="btn btn-primary"> Logout </a></button>
+
+
+	</nav>
+</header>
+
+	<section class="team">
+		<div class="center">
+			<h1>Our Team Member</h1>
+		</div>
+
+		<div class="team-content">
+			<div class="box">
+
+                        <img src="/static/img/kk1.jpg">
+				<h3>Karib Shams</h3>
+				<h5>FRONTEND DEVELOPER</h5>
+				<div class="icons">
+					
+					
+                              <a href="#"><i class="ri-telegram-fill"></i></a>
+					<a href="#"><i class="ri-whatsapp-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="#"><i class="ri-instagram-fill"></i></a>
+					
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="/static/img/k2.jpg">
+				<h3>Aritra Das</h3>
+				<h5>BACKEND DEVELOPER</h5>
+				<div class="icons">
+					<a href="#"><i class="ri-telegram-fill"></i></a>
+					<a href="#"><i class="ri-whatsapp-fill"></i></a>
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="#"><i class="ri-instagram-fill"></i></a>
+					
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="/static/img/k4.jpg">
+				<h3>Md. Rakibul Hasan</h3>
+				<h5>BACKEND DEVELOPER</h5>
+				<div class="icons">
+                             <a href="#"><i class="ri-facebook-box-fill"></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="/static/img/k3.jpg">
+				<h3>Samiha Masura</h3>
+				<h5>FRONTEND</h5>
+				<div class="icons">
+					<a href="#"><i class="ri-whatsapp-fill"></i></a>
+
+					<a href="#"><i class="ri-facebook-box-fill"></i></a>
+					<a href="#"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+</body>
+</html>

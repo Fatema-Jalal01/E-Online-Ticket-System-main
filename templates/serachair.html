@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigration bar</title>
+
+    <link rel="stylesheet"href="/static/css/navstyle.css" >
+	<link rel="stylesheet"href="/static/css/home.css" >
+
+<script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script type="text/javascript" src="/static/js/language.js"></script>  
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    
+</head>
+
+<body style="background-color:rgb(187, 144, 204);">
+  <marquee>Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |</marquee>
+      <header>
+          <div class="logo">
+              <p>bangladesh travel</p>
+          </div>
+      <nav>
+        <ul>
+          <li><a href="{% url 'homey'%}">Home</a></li>
+            <li><a href="{% url 'bus'%}">BusTickets</a></li>
+            <li><a href="{% url 'train'%}">TrainTickets</a></li>
+            <li><a href="{% url 'airplane'%}">AirplaneTickets</a></li>
+          
+        </ul>
+                </nav>
+                <button><a href="{% url 'logout'%}" class="btn btn-primary"> Logout </a></button>
+  
+                </header>
+
+                <div class="wrapper">
+                  <div class="slide-wrapper" data-slide="wrapper">
+                      <button class="slide-nav-button slide-nav-previous fas fa-chevron-left" data-slide="nav-previous-button"></button>
+                      <button class="slide-nav-button slide-nav-next fas fa-chevron-right" data-slide="nav-next-button"></button>
+                      <div class="slide-list" data-slide="list">
+                          <div class="slide-item" data-slide="item" data-index="0">
+                              <div class="slide-content">
+                                  <img class="slide-image" src="/static/img/assassinscreed.png" alt="Assassin's Creed" />
+                                  
+                              </div>
+                          </div>
+                          <div class="slide-item" data-slide="item" data-index="1">
+                              <div class="slide-content">
+                                  <img class="slide-image" src="/static/img/fortnite.png" alt="Fortnite" />
+                                  
+                              </div>
+                          </div>
+                          <div class="slide-item" data-slide="item" data-index="2">
+                              <div class="slide-content">
+                                  <img class="slide-image" src="/static/img/freefire.png" alt="Freefire" />
+                                 
+                              </div>
+                          </div>
+                          <div class="slide-item" data-slide="item" data-index="3">
+                              <div class="slide-content">
+                                  <img class="slide-image" src="/static/img/gta-v.png" alt="GTA V" />
+                                 
+                              </div>
+                          </div>
+                          <div class="slide-item" data-slide="item" data-index="4">
+                              <div class="slide-content">
+                                  <img class="slide-image" src="/static/img/halo5.png" alt="Halo 5" />
+                                 
+                              </div>
+                          </div>
+                          <div class="slide-item" data-slide="item" data-index="5">
+                              <div class="slide-content">
+                                  <img class="slide-image" src="/static/img/league-of-legends.png" alt="League of Legends" />
+                               
+                              </div>
+                          </div>
+                          <div class="slide-item" data-slide="item" data-index="6">
+                              <div class="slide-content">
+                                  <img class="slide-image" src="/static/img/red-dead-redemption-2.png" alt="Red Dead Redemption 2" />
+                                
+                              </div>
+                          </div>
+                          <div class="slide-item" data-slide="item" data-index="7">
+                              <div class="slide-content">
+                                  <img class="slide-image" src="/static/img/zelda.png" alt="Zelda" />
+                                
+                              </div>
+                          </div>
+                      </div>
+                      <div class="slide-controls" data-slide="controls-wrapper">
+                      </div>
+                  </div>
+              </div>
+              <script src="/static/js/slides.js"></script>
+              <script>
+                  initSlider({
+                      autoPlay: true,
+                      startAtIndex: 0,
+                      timeInterval: 1000
+                  })
+              </script>
+
+
+              
+                {% for a in air_obj %}
+                <ul>
+                  <h1>{{ a.air_name }}</h1>
+      <h3>{{ a.airfrom }} To {{ a.airto }}</h3>
+        <h3>Estimated Time: {{ a.AirEstimation }}</h3>
+          <h3>Date: {{ a.airdate }}</h3>
+            <h3>Fare : {{ a.fare }}</h3>
+      <button> <a href="{% url 'plane_seat_selection' air_id=a.air_id %}">View Seats</a> </button> 
+      
+    </ul>
+  {% endfor %}
+</body>
+</html>             

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seat Selection</title>
+    <link rel="stylesheet" href="/static/css/seats.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigration bar</title>
+
+    <link rel="stylesheet"href="/static/css/home.css" >
+    <link rel="stylesheet"href="/static/css/navstyle.css" >
+  </head>
+  <body style="background-color:skyblue;">
+
+	
+	
+    <marquee>Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp </marquee>
+        <header>
+            <div class="logo">
+                <p>bangladesh travel</p>
+            </div>
+        <nav>
+          <ul>
+            <li><a href="{% url 'homey'%}">Home</a></li>
+              <li><a href="{% url 'bus'%}">BusTickets</a></li>
+              <li><a href="{% url 'train'%}">TrainTickets</a></li>
+              <li><a href="{% url 'airplane'%}">AirplaneTickets</a></li>
+            
+          </ul>
+                  </nav>
+                  <button><a href="{% url 'logout'%}" class="btn btn-primary"> Logout </a></button>
+    
+                  </header>
+    <h2>Select seats for {{ plane.air_name }}</h2>
+    <form method="POST" action="{% url 'plane_seat_selection' air_id=air_id %}">
+      {% csrf_token %}
+      
+      <div class="container">
+        <div class="seats">
+          <div class="row">
+            <div><input type="checkbox" value="1" class="seat" data-seat="1" name="seat_id" id="seat_id_1" {% if seat_exists.1 %}disabled{% endif %}>1{% if seat_exists.1 %} (Booked){% endif %}</div>
+            <div><input type="checkbox" value="2" class="seat" data-seat="2" name="seat_id" id="seat_id_2" {% if seat_exists.2 %}disabled{% endif %}>2{% if seat_exists.2 %} (Booked){% endif %}</div>
+            <div><input type="checkbox" value="3" class="seat" data-seat="3" name="seat_id" id="seat_id_3" {% if seat_exists.3 %}disabled{% endif %}>3{% if seat_exists.3 %} (Booked){% endif %}</div>
+            <div><input type="checkbox" value="4" class="seat" data-seat="4" name="seat_id" id="seat_id_4" {% if seat_exists.4 %}disabled{% endif %}>4{% if seat_exists.4 %} (Booked){% endif %}</div>
+
+        </div>
+        <div class="row">
+          <div><input type="checkbox" value="5" class="seat" data-seat="5" name="seat_id" id="seat_id_5" {% if seat_exists.5 %}disabled{% endif %}>5{% if seat_exists.5 %} (Booked){% endif %}</div>
+          <div><input type="checkbox" value="6" class="seat" data-seat="6" name="seat_id" id="seat_id_6" {% if seat_exists.6 %}disabled{% endif %}>6{% if seat_exists.6 %} (Booked){% endif %}</div>
+          <div><input type="checkbox" value="7" class="seat" data-seat="7" name="seat_id" id="seat_id_7" {% if seat_exists.7 %}disabled{% endif %}>7{% if seat_exists.7 %} (Booked){% endif %}</div>
+          <div><input type="checkbox" value="8" class="seat" data-seat="8" name="seat_id" id="seat_id_8" {% if seat_exists.8 %}disabled{% endif %}>8{% if seat_exists.8 %} (Booked){% endif %}</div>
+
+      </div>
+      <div class="row">
+        <div><input type="checkbox" value="9" class="seat" data-seat="9" name="seat_id" id="seat_id_9" {% if seat_exists.9 %}disabled{% endif %}>9{% if seat_exists.9 %} (Booked){% endif %}</div>
+        <div><input type="checkbox" value="10" class="seat" data-seat="10" name="seat_id" id="seat_id_10" {% if seat_exists.10 %}disabled{% endif %}>10{% if seat_exists.10 %} (Booked){% endif %}</div>
+        <div><input type="checkbox" value="11" class="seat" data-seat="11" name="seat_id" id="seat_id_11" {% if seat_exists.11 %}disabled{% endif %}>11{% if seat_exists.11 %} (Booked){% endif %}</div>
+        <div><input type="checkbox" value="12" class="seat" data-seat="12" name="seat_id" id="seat_id_12" {% if seat_exists.12 %}disabled{% endif %}>12{% if seat_exists.12 %} (Booked){% endif %}</div>
+
+    </div>
+    <div class="row">
+      <div><input type="checkbox" value="13" class="seat" data-seat="13" name="seat_id" id="seat_id_13" {% if seat_exists.13 %}disabled{% endif %}>13{% if seat_exists.13 %} (Booked){% endif %}</div>
+      <div><input type="checkbox" value="14" class="seat" data-seat="14" name="seat_id" id="seat_id_14" {% if seat_exists.14 %}disabled{% endif %}>14{% if seat_exists.14 %} (Booked){% endif %}</div>
+      <div><input type="checkbox" value="15" class="seat" data-seat="15" name="seat_id" id="seat_id_15" {% if seat_exists.15 %}disabled{% endif %}>15{% if seat_exists.15 %} (Booked){% endif %}</div>
+      <div><input type="checkbox" value="16" class="seat" data-seat="16" name="seat_id" id="seat_id_16" {% if seat_exists.16 %}disabled{% endif %}>16{% if seat_exists.16 %} (Booked){% endif %}</div>
+
+  </div>
+  <div class="row">
+    <div><input type="checkbox" value="17" class="seat" data-seat="17" name="seat_id" id="seat_id_17" {% if seat_exists.17 %}disabled{% endif %}>17{% if seat_exists.17 %} (Booked){% endif %}</div>
+    <div><input type="checkbox" value="18" class="seat" data-seat="18" name="seat_id" id="seat_id_18" {% if seat_exists.18 %}disabled{% endif %}>18{% if seat_exists.18 %} (Booked){% endif %}</div>
+    <div><input type="checkbox" value="19" class="seat" data-seat="19" name="seat_id" id="seat_id_19" {% if seat_exists.19 %}disabled{% endif %}>19{% if seat_exists.19 %} (Booked){% endif %}</div>
+    <div><input type="checkbox" value="20" class="seat" data-seat="20" name="seat_id" id="seat_id_20" {% if seat_exists.20 %}disabled{% endif %}>20{% if seat_exists.20 %} (Booked){% endif %}</div>
+
+</div>
+<div class="row">
+  <div><input type="checkbox" value="21" class="seat" data-seat="21" name="seat_id" id="seat_id_21" {% if seat_exists.21 %}disabled{% endif %}>21{% if seat_exists.21 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="22" class="seat" data-seat="22" name="seat_id" id="seat_id_22" {% if seat_exists.22 %}disabled{% endif %}>22{% if seat_exists.22 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="23" class="seat" data-seat="23" name="seat_id" id="seat_id_23" {% if seat_exists.23 %}disabled{% endif %}>23{% if seat_exists.23 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="24" class="seat" data-seat="24" name="seat_id" id="seat_id_24" {% if seat_exists.24 %}disabled{% endif %}>24{% if seat_exists.24 %} (Booked){% endif %}</div>
+
+</div>
+<div class="row">
+  <div><input type="checkbox" value="25" class="seat" data-seat="25" name="seat_id" id="seat_id_25" {% if seat_exists.25 %}disabled{% endif %}>25{% if seat_exists.25 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="26" class="seat" data-seat="26" name="seat_id" id="seat_id_26" {% if seat_exists.26 %}disabled{% endif %}>26{% if seat_exists.26 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="27" class="seat" data-seat="27" name="seat_id" id="seat_id_27" {% if seat_exists.27 %}disabled{% endif %}>27{% if seat_exists.27 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="28" class="seat" data-seat="28" name="seat_id" id="seat_id_28" {% if seat_exists.28 %}disabled{% endif %}>28{% if seat_exists.28 %} (Booked){% endif %}</div>
+
+</div>
+<div class="row">
+  <div><input type="checkbox" value="29" class="seat" data-seat="29" name="seat_id" id="seat_id_29" {% if seat_exists.29 %}disabled{% endif %}>29{% if seat_exists.29 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="30" class="seat" data-seat="30" name="seat_id" id="seat_id_30" {% if seat_exists.30 %}disabled{% endif %}>30{% if seat_exists.30 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="31" class="seat" data-seat="31" name="seat_id" id="seat_id_31" {% if seat_exists.31 %}disabled{% endif %}>31{% if seat_exists.31 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="32" class="seat" data-seat="32" name="seat_id" id="seat_id_32" {% if seat_exists.32 %}disabled{% endif %}>32{% if seat_exists.32 %} (Booked){% endif %}</div>
+
+</div>
+<div class="row">
+  <div><input type="checkbox" value="33" class="seat" data-seat="33" name="seat_id" id="seat_id_33" {% if seat_exists.33 %}disabled{% endif %}>33{% if seat_exists.33 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="34" class="seat" data-seat="34" name="seat_id" id="seat_id_34" {% if seat_exists.34 %}disabled{% endif %}>34{% if seat_exists.34 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="35" class="seat" data-seat="35" name="seat_id" id="seat_id_35" {% if seat_exists.35 %}disabled{% endif %}>35{% if seat_exists.35 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="36" class="seat" data-seat="36" name="seat_id" id="seat_id_36" {% if seat_exists.36 %}disabled{% endif %}>36{% if seat_exists.36 %} (Booked){% endif %}</div>
+
+</div>
+<div class="row">
+  <div><input type="checkbox" value="37" class="seat" data-seat="37" name="seat_id" id="seat_id_37" {% if seat_exists.37 %}disabled{% endif %}>37{% if seat_exists.37 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="38" class="seat" data-seat="38" name="seat_id" id="seat_id_38" {% if seat_exists.38 %}disabled{% endif %}>38{% if seat_exists.38 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="39" class="seat" data-seat="39" name="seat_id" id="seat_id_39" {% if seat_exists.39 %}disabled{% endif %}>39{% if seat_exists.39 %} (Booked){% endif %}</div>
+  <div><input type="checkbox" value="40" class="seat" data-seat="40" name="seat_id" id="seat_id_40" {% if seat_exists.40 %}disabled{% endif %}>40{% if seat_exists.40 %} (Booked){% endif %}</div>
+
+</div>
+        </div>
+        
+        <button class="btn" onclick="saveSelectedSeats()">Submit</button>
+      </div>      
+      
+    </form>
+    <script src="/static/js/seats.js"></script>
+  </body>
+</html>

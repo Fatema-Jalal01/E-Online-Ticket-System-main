@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigration bar</title>
+
+    <link rel="stylesheet"href="/static/css/home.css" >
+    <link rel="stylesheet"href="/static/css/navstyle.css" >
+<script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script type="text/javascript" src="/static/js/language.js"></script>  
+</head>
+<body style="background-color: rgb(255, 255, 251);">
+
+	
+	
+<marquee>Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp </marquee>
+    <header>
+        <div class="logo">
+            <p>bangladesh travel</p>
+        </div>
+		<nav>
+			<ul>
+				<li><a href="{% url 'homey'%}">Home</a></li>
+			    <li><a href="{% url 'bus'%}">BusTickets</a></li>
+			    <li><a href="{% url 'train'%}">TrainTickets</a></li>
+			    <li><a href="{% url 'airplane'%}">AirplaneTickets</a></li>
+				
+			</ul>
+              </nav>
+              <button><a href="{% url 'logout'%}" class="btn btn-primary"> Logout </a></button>
+              </header>	
+<div class="content-items">
+				
+			</div>
+<div id="google_element" align="right"></div>
+
+
+			<section class="tickets">
+			
+			<div class="ticket-type">
+
+<img src="/static/img/bus-service.jpg"style="width:300px;height:120px;">
+				<h3>Bus Tickets</h3>
+				<a href="{% url 'bus'%}">Book now</a>
+			</div>
+			<div class="ticket-type">
+<img src="/static/img/train.jpg"style="width:300px;height:120px;">
+				<h3>Train Tickets</h3>
+				<a href="{% url 'train'%}">Book now</a>
+			</div>
+			<div class="ticket-type">
+<img src="/static/img/air.jpg"style="width:300px;height:120px;">
+				<h3>Airplane Tickets</h3>
+				<a href="{% url 'airplane'%}">Book now</a>
+			</div>
+			<box><br><br><br><br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<a href="{% url 'term'%}" style="color: black;">Terms & policy</a>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<a href="{% url 'about'%}" style="color: black;">About us</a>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<a href="{% url 'manual'%}" style="color: black;">How to use ?</a></box>
+		</section>
+	</main>
+
+</body>
+</html>

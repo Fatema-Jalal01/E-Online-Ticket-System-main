@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <!--
+    <table border='1'>
+  <tr>
+    <th>Bus Name</th>
+    <th>From</th>
+    <th>To</th>
+  </tr>
+  {% for x in bus_obj %}
+    <tr>
+      <td>{{ x.bus_name }}</td>
+      <td>{{ x.busfrom }}</td>
+      <td>{{ x.busto }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+  -->
+  <h2>{{ info.gender }}</h2>
+      <h3>{{ info.nid }}</h3>
+  <h2>AGAIN</h2>
+  {% for x in info %}
+    <ul>
+      <h2>{{ x.gender }}</h2>
+      <h3>{{ x.nid }}</h3>
+        
+        <!--<button align="right">Submit</button>--> 
+        
+    </ul>
+  {% endfor %}
+</body>
+</html>             

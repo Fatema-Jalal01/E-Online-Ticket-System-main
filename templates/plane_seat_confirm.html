@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+
+    <link rel="stylesheet"href="/static/css/navstyle.css" >
+	<link rel="stylesheet"href="/static/css/home.css" >
+
+<script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script type="text/javascript" src="/static/js/language.js"></script>  
+</head>
+
+<body style="background-color:rgb(187, 144, 204);">
+  <marquee>Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |</marquee>
+      <header>
+          <div class="logo">
+              <p>bangladesh travel</p>
+          </div>
+      <nav>
+        <ul>
+          <li><a href="{% url 'homey'%}">Home</a></li>
+            <li><a href="{% url 'bus'%}">BusTickets</a></li>
+            <li><a href="{% url 'train'%}">TrainTickets</a></li>
+            <li><a href="{% url 'airplane'%}">AirplaneTickets</a></li>
+          
+        </ul>
+                </nav>
+                <button><a href="{% url 'logout'%}" class="btn btn-primary"> Logout </a></button>
+  
+                </header>
+  <div style="background-color: rgb(252, 213, 165); padding-left: 80px;">
+    {% if booked_seats %}
+      <h2>Booked Seats:</h2>
+      <h3> <p> Your ID : {{ current_user_id }} </p> </h3>
+      <h3> <p> Your Name : {{ user_name }} </p> </h3>
+      <h3> <p> Email Address: {{ email }} </p> </h3>
+
+      {% with booked_seats.0.plane as plane %}
+        <h3> <p>plane Name: {{ plane.air_name }}</p></h3>
+        <h3><p>From: {{ plane.airfrom }}</p></h3> 
+        <h3><p>To: {{ plane.airto }}</p></h3> 
+      
+
+      <ul>
+        {% for seat in booked_seats %}
+          <li>
+            <h3>{{ seat.seat_number }}</h3>
+            <form action="{% url 'plane_delete_seat' %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="seat_id" value="{{ seat.seat_number }}">
+              <button type="submit">Delete</button>
+              <br>
+            </form>
+          </li>
+        {% endfor %}
+        <br>
+        <button><a href="{% url 'planepay' air_id=plane.air_id %}"> <h3>Payment</h3></a></button> 
+        {% endwith %}
+      </ul>
+    {% else %}
+      <h2>No seats have been booked yet.</h2>
+      <br>
+      <h3><a href="{% url 'airplane' %}">Return to Plane Page</a></h3>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login and Registration Form| CodingNepal</title>
+	
+      <link rel="stylesheet" href="/static/css/login.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   </head>
+   <body>
+
+<header>
+<div class="logo">
+            <p>bangladesh travel&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+              <button><a href="{% url 'login'%}">Log in</a></a></button>
+			     <button><a href="{% url 'sign'%}">sign up</a></a></button>
+
+
+	</nav>
+</header>
+      <div class="wrapper">
+        
+         <div class="form-container">
+            
+            <div class="form-inner">
+               <form action="#" class="login" method="POST">
+                  {% csrf_token %}
+
+                  <div class="field">
+                     <input type="text" placeholder="Enter User Name" id="username" name="username">
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" id="password" name="pass">
+                  </div>
+                  <div class="pass-link">
+                     <a href="#">Forgot password?</a>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Not a member? <a href="{% url 'sign'%}">Signup now</a>
+                  </div>
+               </form>
+               
+            </div>
+         </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         
+         
+      </script>
+   </body>
+</html>

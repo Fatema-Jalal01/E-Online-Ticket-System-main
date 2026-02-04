@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login and Registration Form</title>
+	
+      <link rel="stylesheet" href="/static/css/login.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   </head>
+   <body>
+
+<header> 
+<div class="logo">
+            <p>bangladesh travel&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+              <button><a href="{% url 'login'%}">Log in</a></a></button>
+			     <button><a href="{% url 'sign'%}">sign up</a></a></button>
+
+
+	</nav>
+</header>
+      <div class="wrapper">
+         <div class="form-container">
+           
+            <div class="form-inner">
+              
+               <form action="" class="signup" method="POST">
+                  {% csrf_token %}
+                  <div class="field">
+                     <input type="text" placeholder="Username"  name="username" id="username">
+                  </div>
+
+                  <div class="field">
+                     <input type="Email" placeholder="Email or Phone"  name="email" id="email">
+                  </div>
+
+                  
+                  <div class="field">
+                     <input type="password" placeholder="Password"  name="password1" id="password1">
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirm password"  name="password2" id="password2">
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Signup">
+                  </div>
+                  
+               </form>
+         </div>
+		</div>
+		</div>
+      <script>
+        
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         
+      </script>
+   </body>
+</html>

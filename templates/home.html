@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigration bar</title>
+
+    <link rel="stylesheet"href="/static/css/navstyle.css" >
+<script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script type="text/javascript" src="/static/js/language.js"></script>  
+</head>
+<body style="background-color:black;">
+
+	
+	
+<marquee>Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp 5%  Discount   for   Log  in &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp 5%  Discount   for   Log  in &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp 5%  Discount   for   Log  in &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome to  Bangladesh  Travel |&nbsp&nbsp&nbsp 5%  Discount   for   Log  in </marquee>
+    <header>
+        <div class="logo">
+            <p>bangladesh travel</p>
+        </div>
+		<nav>
+			<ul>
+				<li><a href="{% url 'homey'%}">Home</a></li>
+			    <li><a href="{% url 'bus'%}">BusTickets</a></li>
+			    <li><a href="{% url 'train'%}">TrainTickets</a></li>
+			    <li><a href="{% url 'airplane'%}">AirplaneTickets</a></li>
+				
+			</ul>
+              </nav>
+              <button><a href="{% url 'login'%}">Log in</a></a></button>
+			<button><a href="{% url 'sign'%}">sign up</a></a></button>
+
+
+
+              </header>	
+<div class="content-items">
+				<img src="/static/img/homebanner.jpg" alt="travel"width="1500" height="500">
+			</div>
+<div id="google_element" align="right"></div>
+
+
+			<section class="tickets">
+			
+			<div class="ticket-type">
+
+<img src="/static/img/bus0.jpg"style="width:300px;height:120px;">
+				<h3>Bus Tickets</h3>
+				<a href="{% url 'bus'%}">Book now</a>
+			</div>
+			<div class="ticket-type">
+<img src="/static/img/train.jpg"style="width:300px;height:120px;">
+				<h3>Train Tickets</h3>
+				<a href="{% url 'train'%}">Book now</a>
+			</div>
+			<div class="ticket-type">
+<img src="/static/img/air.jpg"style="width:300px;height:120px;">
+				<h3>Airplane Tickets</h3>
+				<a href="{% url 'airplane'%}">Book now</a>
+			</div>
+		</section>
+	</main>
+
+</body>
+</html>
