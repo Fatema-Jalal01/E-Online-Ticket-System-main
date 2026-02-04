@@ -1,0 +1,121 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+   
+}
+
+body {
+    background-color: #f6f6f6;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    height: 30%;
+}
+
+.slide-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slide-list {
+    display: flex;
+}
+
+.slide-item {
+    cursor: grab;
+    flex-shrink: 0;
+    padding: 0 0px;
+    width: 50vw;
+}
+
+.slide-content {
+    border-radius: 10px;
+    border: 1px solid #fff;
+    box-shadow: #070707 0px 0px 0px;
+    position: relative;
+}
+
+.slide-image {
+   
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+
+
+
+.slide-nav-button {
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0px;
+    position: absolute;
+    z-index: 1;
+}
+
+.slide-nav-previous {
+    left: 20px;
+}
+
+.slide-nav-next {
+    right: 20px;
+}
+
+.slide-controls {
+    margin: 30px auto 0;
+}
+
+.slide-control-button {
+    color: #fff;
+    cursor: pointer;
+    background: transparent;
+    font-size: 0px;
+    margin: 0 5px;
+}
+
+.slide-control-button.active {
+    color: #cd8cf5;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .slide-nav-button {
+        margin-top: -20px;
+        font-size: 28px;
+    }
+    
+    .slide-nav-previous {
+        left: 10px;
+    }
+    
+    .slide-nav-next {
+        right: 10px;
+    }
+
+    .slide-controls {
+        margin: 15px auto 0;
+    }
+
+    .slide-control-button {
+        font-size: 14px;
+    }
+
+    .slide-item {
+        cursor: grab;
+        flex-shrink: 0;
+        padding: 0 0px;
+        width: 100vw;
+    }
+}

@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .seats {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .seat {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid black;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .seat.selected {
+    background-color: green;
+  }
+  
